@@ -1,20 +1,30 @@
 import Foundation
 
-public var standardProcessingQueue:DispatchQueue {
-if #available(iOS 10, OSX 10.10, *) {
-        return DispatchQueue.global(qos: .default)
-} else {
-        return DispatchQueue.global(priority: .default)
+#if os(Linux)
+// For now, disable GCD on Linux and run everything on the main thread
+
+protocol SerialDispatch {
+}
+    
+extension SerialDispatch {
+    func runOperationAsynchronously(operation:() -> ()) {
+        operation()
+    }
+    
+    func runOperationSynchronously<T>(operation:() throws -> T) rethrows -> T {
+        return try operation()
     }
 }
 
-public var lowProcessingQueue:DispatchQueue {
-if #available(iOS 10, OSX 10.10, *) {
-        return DispatchQueue.global(qos: .background)
-} else {
-        return DispatchQueue.global(priority: .low)
+#else
+
+    public var standardProcessingQueue:DispatchQueue {
+        return DispatchQueue.global(qos: .default)
     }
-}
+    
+    public var lowProcessingQueue:DispatchQueue {
+        return DispatchQueue.global(qos: .background)
+    }
 
 func runAsynchronouslyOnMainQueue(_ mainThreadOperation:@escaping () -> ()) {
     if (Thread.isMainThread) {
@@ -46,20 +56,21 @@ func runOnMainQueue<T>(_ mainThreadOperation:() -> T) -> T {
 public protocol SerialDispatch {
     var serialDispatchQueue:DispatchQueue { get }
     var dispatchQueueKey:DispatchSpecificKey<Int> { get }
+    var dispatchQueueKeyValue:Int { get }
     func makeCurrentContext()
 }
 
 public extension SerialDispatch {
-    func runOperationAsynchronously(_ operation:@escaping () -> ()) {
+    public func runOperationAsynchronously(_ operation:@escaping () -> ()) {
         self.serialDispatchQueue.async {
             self.makeCurrentContext()
             operation()
         }
     }
     
-    func runOperationSynchronously(_ operation:() -> ()) {
+    public func runOperationSynchronously(_ operation:() -> ()) {
         // TODO: Verify this works as intended
-        if (DispatchQueue.getSpecific(key:self.dispatchQueueKey) == 81) {
+        if (DispatchQueue.getSpecific(key:self.dispatchQueueKey) == self.dispatchQueueKeyValue) {
             operation()
         } else {
             self.serialDispatchQueue.sync {
@@ -69,7 +80,7 @@ public extension SerialDispatch {
         }
     }
     
-    func runOperationSynchronously(_ operation:() throws -> ()) throws {
+    public func runOperationSynchronously(_ operation:() throws -> ()) throws {
         var caughtError:Error? = nil
         runOperationSynchronously {
             do {
@@ -81,7 +92,7 @@ public extension SerialDispatch {
         if (caughtError != nil) {throw caughtError!}
     }
     
-    func runOperationSynchronously<T>(_ operation:() throws -> T) throws -> T {
+    public func runOperationSynchronously<T>(_ operation:() throws -> T) throws -> T {
         var returnedValue: T!
         try runOperationSynchronously {
             returnedValue = try operation()
@@ -89,7 +100,7 @@ public extension SerialDispatch {
         return returnedValue
     }
 
-    func runOperationSynchronously<T>(_ operation:() -> T) -> T {
+    public func runOperationSynchronously<T>(_ operation:() -> T) -> T {
         var returnedValue: T!
         runOperationSynchronously {
             returnedValue = operation()
@@ -97,3 +108,4 @@ public extension SerialDispatch {
         return returnedValue
     }
 }
+#endif

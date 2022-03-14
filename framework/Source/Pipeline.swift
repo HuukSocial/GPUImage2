@@ -163,6 +163,12 @@ public class SourceContainer {
     public func removeAtIndex(_ index:UInt) {
         sources[index] = nil
     }
+    
+    public func removeAllSource() {
+        for i in 0..<sources.count {
+            sources[UInt(i)] = nil
+        }
+    }
 }
 
 public class ImageRelay: ImageProcessingOperation {

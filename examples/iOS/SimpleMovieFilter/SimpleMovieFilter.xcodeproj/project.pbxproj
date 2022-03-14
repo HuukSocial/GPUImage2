@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2393812071FDE4001886DD /* Assets-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F23937D2071FDE4001886DD /* Assets-iOS.xcassets */; };
+		1FDF369F2071965100089948 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF369E2071965100089948 /* CoreAudio.framework */; };
+		1FDF36A12071966B00089948 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF36A02071966B00089948 /* AVFoundation.framework */; };
 		BC9E367C1E525BCF00B8604F /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC9E36771E525BC000B8604F /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BCC49F931CD6E1D800B63EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC49F921CD6E1D800B63EEB /* AppDelegate.swift */; };
 		BCC49F951CD6E1D800B63EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC49F941CD6E1D800B63EEB /* ViewController.swift */; };
 		BCC49F981CD6E1D800B63EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC49F961CD6E1D800B63EEB /* Main.storyboard */; };
 		BCC49F9D1CD6E1D800B63EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC49F9B1CD6E1D800B63EEB /* LaunchScreen.storyboard */; };
-		BCC49FA61CD6E20000B63EEB /* sample_iPod.m4v in Resources */ = {isa = PBXBuildFile; fileRef = BCC49FA51CD6E20000B63EEB /* sample_iPod.m4v */; };
+		BCC49FA61CD6E20000B63EEB /* sample.m4v in Resources */ = {isa = PBXBuildFile; fileRef = BCC49FA51CD6E20000B63EEB /* sample.m4v */; };
+		F059DEC32742A1C000446F57 /* sample3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F059DEBF2742A1C000446F57 /* sample3.mp4 */; };
+		F0BF60422743FD6800B0C6DA /* sample4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F0BF603E2743FD6800B0C6DA /* sample4.mp4 */; };
+		F0BF60442743FDBD00B0C6DA /* sample5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F0BF60432743FDBD00B0C6DA /* sample5.mp4 */; };
+		F0D6E1A6273CF33100754F4A /* sample1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F0D6E1A5273CF33100754F4A /* sample1.mp4 */; };
+		F0D6E1A8273CF3EF00754F4A /* sample2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F0D6E1A7273CF3EF00754F4A /* sample2.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F23937D2071FDE4001886DD /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets-iOS.xcassets"; path = "../../../SharedAssets/Assets-iOS.xcassets"; sourceTree = "<group>"; };
+		1FDF369E2071965100089948 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		1FDF36A02071966B00089948 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BC9E366B1E525BC000B8604F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../../../framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		BCC49F8F1CD6E1D800B63EEB /* SimpleMovieFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMovieFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC49F921CD6E1D800B63EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +85,12 @@
 		BCC49F971CD6E1D800B63EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC49F9C1CD6E1D800B63EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCC49F9E1CD6E1D800B63EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCC49FA51CD6E20000B63EEB /* sample_iPod.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = sample_iPod.m4v; path = ../../../SharedAssets/sample_iPod.m4v; sourceTree = "<group>"; };
+		BCC49FA51CD6E20000B63EEB /* sample.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = sample.m4v; path = ../../../SharedAssets/sample.m4v; sourceTree = "<group>"; };
+		F059DEBF2742A1C000446F57 /* sample3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.mp4; sourceTree = "<group>"; };
+		F0BF603E2743FD6800B0C6DA /* sample4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample4.mp4; sourceTree = "<group>"; };
+		F0BF60432743FDBD00B0C6DA /* sample5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample5.mp4; sourceTree = "<group>"; };
+		F0D6E1A5273CF33100754F4A /* sample1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample1.mp4; sourceTree = "<group>"; };
+		F0D6E1A7273CF3EF00754F4A /* sample2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample2.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +98,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDF36A12071966B00089948 /* AVFoundation.framework in Frameworks */,
+				1FDF369F2071965100089948 /* CoreAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FDF369D2071965000089948 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF36A02071966B00089948 /* AVFoundation.framework */,
+				1FDF369E2071965100089948 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC9E366C1E525BC000B8604F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +132,7 @@
 				BCC49F911CD6E1D800B63EEB /* Application */,
 				BCC49FA41CD6E1E300B63EEB /* Resources */,
 				BCC49F901CD6E1D800B63EEB /* Products */,
+				1FDF369D2071965000089948 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +150,7 @@
 				BCC49F921CD6E1D800B63EEB /* AppDelegate.swift */,
 				BCC49F941CD6E1D800B63EEB /* ViewController.swift */,
 				BCC49F961CD6E1D800B63EEB /* Main.storyboard */,
+				1F23937D2071FDE4001886DD /* Assets-iOS.xcassets */,
 				BC9E366B1E525BC000B8604F /* GPUImage.xcodeproj */,
 			);
 			name = Application;
@@ -131,7 +160,12 @@
 		BCC49FA41CD6E1E300B63EEB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BCC49FA51CD6E20000B63EEB /* sample_iPod.m4v */,
+				BCC49FA51CD6E20000B63EEB /* sample.m4v */,
+				F0D6E1A5273CF33100754F4A /* sample1.mp4 */,
+				F0D6E1A7273CF3EF00754F4A /* sample2.mp4 */,
+				F059DEBF2742A1C000446F57 /* sample3.mp4 */,
+				F0BF603E2743FD6800B0C6DA /* sample4.mp4 */,
+				F0BF60432743FDBD00B0C6DA /* sample5.mp4 */,
 				BCC49F9B1CD6E1D800B63EEB /* LaunchScreen.storyboard */,
 				BCC49F9E1CD6E1D800B63EEB /* Info.plist */,
 			);
@@ -173,6 +207,7 @@
 				TargetAttributes = {
 					BCC49F8E1CD6E1D800B63EEB = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = MGM8FC7WSV;
 						LastSwiftMigration = 0940;
 					};
 				};
@@ -182,6 +217,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -237,8 +273,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCC49FA61CD6E20000B63EEB /* sample_iPod.m4v in Resources */,
+				F0BF60422743FD6800B0C6DA /* sample4.mp4 in Resources */,
+				BCC49FA61CD6E20000B63EEB /* sample.m4v in Resources */,
 				BCC49F9D1CD6E1D800B63EEB /* LaunchScreen.storyboard in Resources */,
+				F0D6E1A8273CF3EF00754F4A /* sample2.mp4 in Resources */,
+				F059DEC32742A1C000446F57 /* sample3.mp4 in Resources */,
+				F0BF60442743FDBD00B0C6DA /* sample5.mp4 in Resources */,
+				F0D6E1A6273CF33100754F4A /* sample1.mp4 in Resources */,
+				1F2393812071FDE4001886DD /* Assets-iOS.xcassets in Resources */,
 				BCC49F981CD6E1D800B63EEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,10 +437,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MGM8FC7WSV;
 				INFOPLIST_FILE = SimpleMovieFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunsetlakesoftware.SimpleMovieFilter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuyenlx.SimpleMovieFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -409,10 +452,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MGM8FC7WSV;
 				INFOPLIST_FILE = SimpleMovieFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunsetlakesoftware.SimpleMovieFilter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuyenlx.SimpleMovieFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

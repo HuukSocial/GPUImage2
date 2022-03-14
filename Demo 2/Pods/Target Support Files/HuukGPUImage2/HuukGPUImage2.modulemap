@@ -1,0 +1,6 @@
+framework module HuukGPUImage2 {
+  umbrella header "HuukGPUImage2-umbrella.h"
+
+  export *
+  module * { export * }
+}

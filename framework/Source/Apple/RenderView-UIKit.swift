@@ -61,7 +61,19 @@ public class RenderView:UIView, ImageConsumer {
         displayRenderbuffer = newDisplayRenderbuffer
         glBindRenderbuffer(GLenum(GL_RENDERBUFFER), displayRenderbuffer!)
 
-        sharedImageProcessingContext.context.renderbufferStorage(Int(GL_RENDERBUFFER), from:self.layer as! CAEAGLLayer)
+        //https://github.com/BradLarson/GPUImage2/issues/226
+        if !Thread.current.isMainThread {
+            let group = DispatchGroup()
+            group.enter()
+            
+            DispatchQueue.main.async {
+                sharedImageProcessingContext.context.renderbufferStorage(Int(GL_RENDERBUFFER), from:self.layer as! CAEAGLLayer)
+                group.leave()
+            }
+            group.wait()
+        }
+        
+//        sharedImageProcessingContext.context.renderbufferStorage(Int(GL_RENDERBUFFER), from:self.layer as! CAEAGLLayer)
 
         var backingWidth:GLint = 0
         var backingHeight:GLint = 0

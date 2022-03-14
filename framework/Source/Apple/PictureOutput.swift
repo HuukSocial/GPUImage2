@@ -35,15 +35,16 @@ public class PictureOutput: ImageConsumer {
     deinit {
     }
     
-    public func saveNextFrameToURL(_ url:URL, format:PictureFileFormat) {
+    public func saveNextFrameToURL(_ url:URL, format:PictureFileFormat, handle: ((Bool) -> Void)?) {
         onlyCaptureNextFrame = true
         encodedImageFormat = format
         self.url = url // Create an intentional short-term retain cycle to prevent deallocation before next frame is captured
         encodedImageAvailableCallback = {imageData in
             do {
                 try imageData.write(to: self.url, options:.atomic)
+                handle?(true)
             } catch {
-                // TODO: Handle this better
+                handle?(false)
                 print("WARNING: Couldn't save image with error:\(error)")
             }
         }
@@ -132,9 +133,9 @@ public class PictureOutput: ImageConsumer {
 }
 
 public extension ImageSource {
-    func saveNextFrameToURL(_ url:URL, format:PictureFileFormat) {
+    func saveNextFrameToURL(_ url:URL, format:PictureFileFormat, handle: ((Bool) -> Void)?) {
         let pictureOutput = PictureOutput()
-        pictureOutput.saveNextFrameToURL(url, format:format)
+        pictureOutput.saveNextFrameToURL(url, format:format, handle: handle)
         self --> pictureOutput
     }
 }

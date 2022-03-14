@@ -1,0 +1,16 @@
+PODS:
+  - HuukGPUImage2 (6.3.1)
+
+DEPENDENCIES:
+  - HuukGPUImage2 (from `../`)
+
+EXTERNAL SOURCES:
+  HuukGPUImage2:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HuukGPUImage2: 17bed64fd1014becd45cbe7c6ae5b5e8610902d6
+
+PODFILE CHECKSUM: b061394f75af8716e87377f46c953839e3ece6a3
+
+COCOAPODS: 1.11.2
